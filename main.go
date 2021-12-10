@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	rs := code.MaximumSubArray([]int{-2, 1, -3, 4, -1, 2, 1, -5, 4})
+	rs := code.LengthOfLastWord2("luffy is still joyboy")
 	fmt.Println(rs)
 
 }
