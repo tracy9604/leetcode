@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	rs := code.FindSqrt(1)
+	rs := code.ClimbStairs(4)
 	fmt.Println(rs)
 
 }
