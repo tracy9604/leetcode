@@ -1,12 +1,12 @@
 package main
 
 import (
-	"fmt"
 	"leetcode/code"
 )
 
 func main() {
-	rs := code.ClimbStairs(4)
-	fmt.Println(rs)
+	list := code.InitListNode([]int{1, 1, 2, 3, 3})
+	rs := code.RemoveDupSortedList(list)
+	code.PrintListNode(rs)
 
 }
