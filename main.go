@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	rs := code.AddBinary("1010", "1011")
+	rs := code.FindSqrt(1)
 	fmt.Println(rs)
 
 }
