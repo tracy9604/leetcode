@@ -5,8 +5,5 @@ import (
 )
 
 func main() {
-	list := code.InitListNode([]int{1, 1, 2, 3, 3})
-	rs := code.RemoveDupSortedList(list)
-	code.PrintListNode(rs)
-
+	code.MergeSortedArray2([]int{1, 2, 3, 0, 0, 0}, 3, []int{2, 5, 6}, 3)
 }
