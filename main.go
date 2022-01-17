@@ -6,6 +6,6 @@ import (
 )
 
 func main() {
-	rs := code.IsPalindrome("0P")
+	rs := code.SingleNumber([]int{4, 1, 2, 1, 2})
 	fmt.Println(rs)
 }
