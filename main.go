@@ -6,6 +6,6 @@ import (
 )
 
 func main() {
-	rs := code.ReverseBit(00000010100101000001111010011100)
+	rs := code.HammingWeight(01011)
 	fmt.Println(rs)
 }
