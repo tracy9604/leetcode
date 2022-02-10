@@ -6,6 +6,6 @@ import (
 )
 
 func main() {
-	rs := code.TwoSum([]int{2, 7, 11, 15}, 9)
+	rs := code.ReverseBit(00000010100101000001111010011100)
 	fmt.Println(rs)
 }
