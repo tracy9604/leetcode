@@ -6,6 +6,6 @@ import (
 )
 
 func main() {
-	rs := code.HammingWeight(01011)
+	rs := code.CheckHappyNumber(42)
 	fmt.Println(rs)
 }
