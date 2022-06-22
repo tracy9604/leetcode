@@ -2,11 +2,12 @@ package main
 
 import (
 	"fmt"
-	"leetcode/algorithms"
+	"leetcode/sorting"
 )
 
 func main() {
-	arr := []int{3, 5, 2, 6}
-	algorithms.MergeSort(arr)
-	fmt.Println(arr)
+
+	arr := []int{3, 0, 1}
+
+	fmt.Println(sorting.FindMissingNumber(arr))
 }
