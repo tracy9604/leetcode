@@ -6,6 +6,6 @@ import (
 )
 
 func main() {
-
-	fmt.Println(string(sorting.FindDifferenceString("a", "aa")))
+	nums := []int{1, 1, 2}
+	fmt.Println(sorting.FindThirdMaximumNumber(nums))
 }
