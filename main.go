@@ -6,6 +6,6 @@ import (
 )
 
 func main() {
-	score := []int{1, 2, 3, 4}
-	fmt.Println(sorting.FindLHS(score))
+	nums := []int{-1, -2, -3, -4}
+	fmt.Println(sorting.FindMaxProduct(nums))
 }
