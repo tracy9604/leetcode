@@ -6,6 +6,6 @@ import (
 )
 
 func main() {
-	nums := []int{1, 1, 2}
-	fmt.Println(sorting.FindThirdMaximumNumber(nums))
+	score := []int{10, 3, 8, 9, 4}
+	fmt.Println(sorting.FindRelativeRank(score))
 }
