@@ -6,6 +6,6 @@ import (
 )
 
 func main() {
-	score := []int{6, 2, 6, 5, 1, 2}
-	fmt.Println(sorting.ArrayPairSum(score))
+	score := []int{1, 2, 3, 4}
+	fmt.Println(sorting.FindLHS(score))
 }
