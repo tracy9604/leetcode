@@ -6,6 +6,6 @@ import (
 )
 
 func main() {
-	nums := []int{-1, -2, -3, -4}
-	fmt.Println(sorting.FindMaxProduct(nums))
+	nums := []int{3, 2, 3, 4, 6, 5}
+	fmt.Println(sorting.FindSetMismatch(nums))
 }
