@@ -6,6 +6,6 @@ import (
 )
 
 func main() {
-	nums := []int{3, 2, 3, 4, 6, 5}
-	fmt.Println(sorting.FindSetMismatch(nums))
+	nums := []int{-1, -5, -6, -7}
+	fmt.Println(sorting.FindLargestNumberLeastTwice(nums))
 }
