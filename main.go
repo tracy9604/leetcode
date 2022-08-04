@@ -6,6 +6,7 @@ import (
 )
 
 func main() {
-	nums := []int{-1, -5, -6, -7}
-	fmt.Println(sorting.FindLargestNumberLeastTwice(nums))
+	aliceSizes := []int{1, 2}
+	bobSizes := []int{2, 3}
+	fmt.Println(sorting.FairCandySwap(aliceSizes, bobSizes))
 }
