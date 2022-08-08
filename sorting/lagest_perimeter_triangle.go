@@ -1,6 +1,8 @@
 package sorting
 
-import "sort"
+import (
+	"sort"
+)
 
 func FindLargestPerimeterTriangle(nums []int) int {
 	sort.Ints(nums)

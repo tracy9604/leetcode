@@ -6,6 +6,6 @@ import (
 )
 
 func main() {
-	nums := []int{2, 1, 2}
-	fmt.Println(sorting.FindLargestPerimeterTriangle(nums))
+	nums := []int{-7, -3, 2, 3, 11}
+	fmt.Println(sorting.FindSquareOfSortedArray(nums))
 }
