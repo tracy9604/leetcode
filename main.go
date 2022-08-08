@@ -6,6 +6,7 @@ import (
 )
 
 func main() {
-	nums := []int{-7, -3, 2, 3, 11}
-	fmt.Println(sorting.FindSquareOfSortedArray(nums))
+	nums := []int{2, -3, -1, 5, -4}
+	k := 2
+	fmt.Println(sorting.LargestSumAfterKNegations(nums, k))
 }
