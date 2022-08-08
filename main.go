@@ -6,7 +6,6 @@ import (
 )
 
 func main() {
-	aliceSizes := []int{1, 2}
-	bobSizes := []int{2, 3}
-	fmt.Println(sorting.FairCandySwap(aliceSizes, bobSizes))
+	nums := []int{4, 1, 0, 0, 1, 1}
+	fmt.Println(sorting.SortByParityII(nums))
 }
