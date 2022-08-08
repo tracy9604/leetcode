@@ -6,6 +6,6 @@ import (
 )
 
 func main() {
-	nums := []int{4, 1, 0, 0, 1, 1}
-	fmt.Println(sorting.SortByParityII(nums))
+	nums := []int{2, 1, 2}
+	fmt.Println(sorting.FindLargestPerimeterTriangle(nums))
 }
