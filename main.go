@@ -2,11 +2,10 @@ package main
 
 import (
 	"fmt"
-	"leetcode/sorting"
+	"time"
 )
 
 func main() {
-	nums := []int{2, -3, -1, 5, -4}
-	k := 2
-	fmt.Println(sorting.LargestSumAfterKNegations(nums, k))
+	var LOC, _ = time.LoadLocation("Asia/Ho_Chi_Minh")
+	fmt.Println(time.Now().In(LOC).UnixMilli())
 }
