@@ -2,10 +2,10 @@ package main
 
 import (
 	"fmt"
-	"time"
+	"leetcode/sorting"
 )
 
 func main() {
-	var LOC, _ = time.LoadLocation("Asia/Ho_Chi_Minh")
-	fmt.Println(time.Now().In(LOC).UnixMilli())
+	heights := []int{17, 99, 2, 71, 45, 64, 26, 85, 39, 35, 100, 18, 27, 84, 6, 3, 48, 51, 21, 85, 49, 66, 16, 83, 76, 16, 15, 40, 26, 96, 5, 3, 53, 37, 71, 29, 82, 8, 19, 39, 91, 60, 93, 53, 53, 9, 49, 12, 3, 84, 3, 80, 61, 17, 33, 71, 70, 22, 13, 12, 83, 37, 5, 21, 6, 62, 25, 2, 52, 6, 72, 88, 47, 25, 11, 67, 89, 85, 49, 4, 99, 41, 89, 83, 90, 99, 72, 50, 53, 30, 8, 84, 78, 85, 6, 7, 89}
+	fmt.Println(sorting.HeightChecker3(heights))
 }
