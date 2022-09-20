@@ -6,6 +6,6 @@ import (
 )
 
 func main() {
-	arr1 := []int{40, 11, 26, 27, -20}
-	fmt.Println(code.FindMinimumAbsDifference(arr1))
+	arr1 := []string{"abba", "baba", "bbaa", "cd", "cd"}
+	fmt.Println(code.RemoveAnagrams(arr1))
 }
