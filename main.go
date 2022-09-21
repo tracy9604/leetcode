@@ -6,6 +6,5 @@ import (
 )
 
 func main() {
-	arr1 := []string{"abba", "baba", "bbaa", "cd", "cd"}
-	fmt.Println(code.RemoveAnagrams(arr1))
+	fmt.Println(code.Count1InBinary2(8))
 }
