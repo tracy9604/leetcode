@@ -6,5 +6,9 @@ import (
 )
 
 func main() {
-	fmt.Println(code.Count1InBinary2(8))
+	arr := [][]int{{1, 0},
+		{0, 0},
+		{1, 0}}
+	k := 2
+	fmt.Println(code.FindWeakestRows(arr, k))
 }
