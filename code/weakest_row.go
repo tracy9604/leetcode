@@ -3,45 +3,26 @@ package code
 import "sort"
 
 func FindWeakestRows(mat [][]int, k int) []int {
-	tmpArr := make([]int, 0)
-	result := make([]int, 0)
-	tmpMap := make(map[int][]int)
-	prevSoldiers := 0
-	curSoldiers := 0
+	score := make([]int, 0)
+	rows := len(mat)
+
 	for i := 0; i < len(mat); i++ {
-		for j := 0; j < len(mat[i]); j++ {
-			if mat[i][j] == 1 {
-				curSoldiers++
+		j := 0
+		for ; j < len(mat[i]); j++ {
+			if mat[i][j] == 0 {
+				break
 			}
 		}
 
-		if i > 0 && prevSoldiers <= curSoldiers {
-			if _, found := tmpMap[prevSoldiers]; !found {
-				tmpArr = append(tmpArr, prevSoldiers)
-			}
-			tmpMap[prevSoldiers] = append(tmpMap[prevSoldiers], i-1)
-		}
-
-		if i == len(mat)-1 && prevSoldiers <= curSoldiers {
-			if _, found := tmpMap[curSoldiers]; !found {
-				tmpArr = append(tmpArr, curSoldiers)
-			}
-			tmpMap[curSoldiers] = append(tmpMap[curSoldiers], i)
-			break
-		}
-
-		prevSoldiers = curSoldiers
-		curSoldiers = 0
+		score = append(score, j*rows+i)
 	}
 
-	sort.Ints(tmpArr)
+	sort.Ints(score)
 
-	for i := 0; i < len(tmpArr); i++ {
-		if len(result) >= k {
-			break
-		}
-		result = append(result, tmpMap[tmpArr[i]]...)
+	// get rowIndex
+	for i := 0; i < len(score); i++ {
+		score[i] = score[i] % rows
 	}
 
-	return result[:k]
+	return score[:k]
 }

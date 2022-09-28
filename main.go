@@ -1,9 +1,12 @@
 package main
 
 import (
-	"leetcode/h3_demo"
+	"fmt"
+	"leetcode/code"
 )
 
 func main() {
-	h3_demo.GetIndex()
+	arr := [][]int{{1, 0}, {0, 0}, {1, 0}}
+	k := 2
+	fmt.Println(code.FindWeakestRows(arr, k))
 }
