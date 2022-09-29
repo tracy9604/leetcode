@@ -2,10 +2,15 @@ package main
 
 import (
 	"fmt"
-	"leetcode/code"
+	"leetcode/h3_demo"
 )
 
 func main() {
-	arr := []int{-766, 259, 203, 601, 896, -226, -844, 168, 126, -542, 159, -833, 950, -454, -253, 824, -395, 155, 94, 894, -766, -63, 836, -433, -780, 611, -907, 695, -395, -975, 256, 373, -971, -813, -154, -765, 691, 812, 617, -919, -616, -510, 608, 201, -138, -669, -764, -77, -658, 394, -506, -675, 523}
-	fmt.Println(code.CheckIfDoubleExists(arr))
+	lat := 21.016492249180757
+	long := 105.79668023976954
+
+	indexes := h3_demo.GetIndex(lat, long)
+
+	rs := h3_demo.GetStrGeoFromH3Indexes(indexes)
+	fmt.Println(rs)
 }
