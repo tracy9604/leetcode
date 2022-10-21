@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	h3v3 "github.com/uber/h3-go/v3"
 	"io/ioutil"
 	"leetcode/h3_demo"
 	"os"
@@ -10,15 +11,20 @@ import (
 )
 
 func main() {
-	//lat := 21.018848843079834
-	//long := 105.78389380540222
+	lat := 10.88675618334471
+	long := 106.64220083059412
+
+	fmt.Println(h3v3.ToString(h3v3.FromGeo(h3v3.GeoCoord{
+		Latitude:  lat,
+		Longitude: long,
+	}, 9)))
 	//indexes := h3_demo.GetIndex2(lat, long)
 	//rs := h3_demo.GetGeoFromH3Indexes3(indexes)
 	//file, _ := json.MarshalIndent(rs, "", " ")
 	//_ = ioutil.WriteFile("/Users/hau.nguyen1/Documents/code/leetcode/output.json", file, 0644)
 	originIndexesMap := make(map[string]int, 0)
 
-	dat, err := os.ReadFile("/Users/hau.nguyen1/Documents/code/leetcode/data.txt")
+	dat, err := os.ReadFile("/Users/hau.nguyen1/Documents/code/leetcode/data1.txt")
 	if err != nil {
 		panic(err)
 	}
@@ -30,14 +36,14 @@ func main() {
 
 	fmt.Println("len origins = ", len(originIndexesMap))
 
-	startIndex := "894142a5db3ffff"
+	startIndex := "8965b574ac7ffff"
 
 	rs := h3_demo.GetIndex(startIndex, originIndexesMap)
 
 	//rs := h3_demo.GetGeoFromH3Indexes(indexes, remainIndexes, originIndexesMap)
 	file, _ := json.MarshalIndent(rs, "", " ")
 
-	_ = ioutil.WriteFile("/Users/hau.nguyen1/Documents/code/leetcode/output.json", file, 0644)
+	_ = ioutil.WriteFile("/Users/hau.nguyen1/Documents/code/leetcode/output2.json", file, 0644)
 	//
 	//f, err := os.Create("/Users/hau.nguyen1/Documents/code/leetcode/output.json")
 	//if err != nil {
