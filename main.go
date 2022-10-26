@@ -58,8 +58,6 @@ func GetResultFarmGeofence() {
 }
 
 func main() {
-	arr1 := []int{2, 1, 100, 3}
-	arr2 := []int{-5, -2, 10, -3, 7}
-	d := 6
-	fmt.Println(code.FindDistanceValueTwoArrays(arr1, arr2, d))
+	arr1 := []int{1, 8, 6, 2, 5, 4, 8, 3, 7}
+	fmt.Println(code.FindMaxArea(arr1))
 }
