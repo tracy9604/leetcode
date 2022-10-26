@@ -5,12 +5,13 @@ import (
 	"fmt"
 	h3v3 "github.com/uber/h3-go/v3"
 	"io/ioutil"
+	"leetcode/code"
 	"leetcode/h3_demo"
 	"os"
 	"strings"
 )
 
-func main() {
+func GetResultFarmGeofence() {
 	lat := 10.88675618334471
 	long := 106.64220083059412
 
@@ -54,4 +55,11 @@ func main() {
 	//if err != nil {
 	//	panic(err)
 	//}
+}
+
+func main() {
+	arr1 := []int{2, 1, 100, 3}
+	arr2 := []int{-5, -2, 10, -3, 7}
+	d := 6
+	fmt.Println(code.FindDistanceValueTwoArrays(arr1, arr2, d))
 }
