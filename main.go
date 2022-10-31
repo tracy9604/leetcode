@@ -58,6 +58,6 @@ func GetResultFarmGeofence() {
 }
 
 func main() {
-	arr1 := []int{1, 8, 6, 2, 5, 4, 8, 3, 7}
-	fmt.Println(code.FindMaxArea(arr1))
+	arr1 := []int{0, 0, 0}
+	fmt.Println(code.Find3Sum(arr1))
 }
