@@ -58,6 +58,7 @@ func GetResultFarmGeofence() {
 }
 
 func main() {
-	arr1 := []int{0, 0, 0}
-	fmt.Println(code.Find3Sum(arr1))
+	arr1 := []int{-1, 2, 1, -4}
+	target := 1
+	fmt.Println(code.Find3SumClosest(arr1, target))
 }
