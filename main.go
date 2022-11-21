@@ -58,7 +58,7 @@ func GetResultFarmGeofence() {
 }
 
 func main() {
-	arr1 := []int{1, 2, 3}
-	code.FindNextPermutation(arr1)
-	fmt.Println(arr1)
+	nums := []int{4, 5, 6, 7, 0, 1, 2}
+	target := 0
+	fmt.Println(code.SearchInRotatedSortedArray(nums, target))
 }
