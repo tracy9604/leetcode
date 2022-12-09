@@ -5,7 +5,7 @@ import (
 	"fmt"
 	h3v3 "github.com/uber/h3-go/v3"
 	"io/ioutil"
-	"leetcode/code"
+	"leetcode/algorithms"
 	"leetcode/h3_demo"
 	"os"
 	"strings"
@@ -57,8 +57,42 @@ func GetResultFarmGeofence() {
 	//}
 }
 
+var validStatusMap = map[uint32][]uint32{
+	1:  {2, 12, 4, 5, 67, 78, 10, 9},
+	4:  {0, 13, 6, 7, 11, 20},
+	0:  {14, 54, 52},
+	40: {41, 0, 23},
+}
+
+var globalStatusMap = map[uint32][]uint32{}
+
+func loadStatus(currentStatus uint32, status []uint32) []uint32 {
+	if _, found := globalStatusMap[currentStatus]; found {
+		return globalStatusMap[currentStatus]
+	}
+	globalStatusMap[currentStatus] = []uint32{}
+	for _, item := range status {
+		if _, found := validStatusMap[item]; found {
+			globalStatusMap[currentStatus] = append(globalStatusMap[currentStatus], loadStatus(item, validStatusMap[item])...)
+		} else {
+			globalStatusMap[item] = []uint32{}
+			globalStatusMap[currentStatus] = append(globalStatusMap[currentStatus], item)
+		}
+	}
+	return globalStatusMap[currentStatus]
+}
+
 func main() {
-	nums := []int{2, 2}
-	target := 2
-	code.Search(nums, 0, len(nums), target)
+	grid := [][]int{
+		{5, 3, 0, 0, 7, 0, 0, 0, 0},
+		{6, 0, 0, 1, 9, 5, 0, 0, 0},
+		{0, 9, 8, 0, 0, 0, 0, 6, 0},
+		{8, 0, 0, 0, 6, 0, 0, 0, 3},
+		{4, 0, 0, 8, 0, 3, 0, 0, 1},
+		{7, 0, 0, 0, 2, 0, 0, 0, 6},
+		{0, 6, 0, 0, 0, 0, 2, 8, 0},
+		{0, 0, 0, 4, 1, 9, 0, 0, 5},
+		{0, 0, 0, 0, 8, 0, 0, 7, 9},
+	}
+	fmt.Println(algorithms.CheckValidSudoku(grid))
 }
