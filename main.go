@@ -5,6 +5,7 @@ import (
 	"fmt"
 	h3v3 "github.com/uber/h3-go/v3"
 	"io/ioutil"
+	"leetcode/code"
 	"leetcode/h3_demo"
 	"os"
 	"strings"
@@ -82,7 +83,6 @@ func loadStatus(currentStatus uint32, status []uint32) []uint32 {
 }
 
 func main() {
-	//candidates := []int{10, 1, 2, 7, 6, 1, 5}
-	//target := 8
-	//fmt.Println(code.CombinationSum2(candidates, target))
+	nums := []int{3, 2, 1, 0, 4}
+	fmt.Println(code.IsCanJump(nums))
 }
