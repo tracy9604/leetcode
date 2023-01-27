@@ -83,6 +83,6 @@ func loadStatus(currentStatus uint32, status []uint32) []uint32 {
 }
 
 func main() {
-	nums := []int{3, 2, 1, 0, 4}
-	fmt.Println(code.IsCanJump(nums))
+	nums := []int{2, 3, 0, 1, 4}
+	fmt.Println(code.Jump(nums))
 }
