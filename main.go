@@ -2,11 +2,10 @@ package main
 
 import (
 	"fmt"
-	"leetcode/algorithms"
+	"leetcode/sorting"
 )
 
 func main() {
-	arr := []int{3, 5, 2, 6}
-	algorithms.MergeSort(arr)
-	fmt.Println(arr)
+	nums := []int{1, 1, 1, 1, 2, 3, 4}
+	fmt.Println(sorting.FindMajorityElement(nums))
 }
