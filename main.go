@@ -83,6 +83,6 @@ func loadStatus(currentStatus uint32, status []uint32) []uint32 {
 }
 
 func main() {
-	nums := []int{2, 3, 0, 1, 4}
-	fmt.Println(code.Jump(nums))
+	nums := []int{1, 2, 3}
+	fmt.Println(code.FindPermutations(nums))
 }

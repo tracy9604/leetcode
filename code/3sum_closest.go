@@ -7,7 +7,7 @@ import (
 
 func Find3SumClosest(nums []int, target int) int {
 	sort.Ints(nums)
-	minClosest := math.MaxInt
+	minClosest := math.MaxInt16
 	sum := 0
 	maxSum := 0
 	for i := 0; i < len(nums); i++ {
