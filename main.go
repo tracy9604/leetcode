@@ -105,6 +105,11 @@ func Distance(lat1, lon1, lat2, lon2 float64) float64 {
 }
 
 func main() {
-	nums := []int{1, 1, 2}
-	fmt.Println(code.FindPermutations(nums))
+	matrix := [][]int{
+		{1, 2, 3, 4},
+		{5, 6, 7, 8},
+		{9, 10, 11, 12},
+		{13, 14, 15, 16},
+	}
+	code.Rotate(matrix)
 }
