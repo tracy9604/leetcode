@@ -105,6 +105,10 @@ func Distance(lat1, lon1, lat2, lon2 float64) float64 {
 }
 
 func main() {
-	strs := []string{"eat", "tea", "tan", "ate", "nat", "bat"}
-	fmt.Println(code.GroupAnagrams(strs))
+	matrix := [][]int{
+		{1, 2, 3},
+		{4, 5, 6},
+		{7, 8, 9},
+	}
+	fmt.Println(code.FindSpiralMatrix(matrix))
 }
