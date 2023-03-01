@@ -105,10 +105,9 @@ func Distance(lat1, lon1, lat2, lon2 float64) float64 {
 }
 
 func main() {
-	matrix := [][]int{
-		{1, 2, 3},
-		{4, 5, 6},
-		{7, 8, 9},
+	intervals := [][]int{
+		{0, 4},
+		{1, 4},
 	}
-	fmt.Println(code.FindSpiralMatrix(matrix))
+	fmt.Println(code.MergeIntervals(intervals))
 }
