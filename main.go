@@ -106,8 +106,9 @@ func Distance(lat1, lon1, lat2, lon2 float64) float64 {
 
 func main() {
 	intervals := [][]int{
-		{0, 4},
-		{1, 4},
+		{1, 3},
+		{6, 9},
 	}
-	fmt.Println(code.MergeIntervals(intervals))
+	newInterval := []int{2, 5}
+	fmt.Println(code.InsertIntervals(intervals, newInterval))
 }
