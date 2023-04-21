@@ -1,15 +1,20 @@
 package main
 
 import (
+	"context"
 	"encoding/json"
 	"fmt"
+	"github.com/imroc/req"
 	h3v3 "github.com/uber/h3-go/v3"
+	"google.golang.org/grpc/metadata"
 	"io/ioutil"
-	"leetcode/code"
+	"leetcode/agoda_contest2023"
 	"leetcode/h3_demo"
 	"math"
 	"os"
+	"strconv"
 	"strings"
+	"time"
 )
 
 func GetResultFarmGeofence() {
@@ -104,11 +109,49 @@ func Distance(lat1, lon1, lat2, lon2 float64) float64 {
 	return 2 * r * math.Asin(math.Sqrt(h))
 }
 
-func main() {
-	intervals := [][]int{
-		{1, 3},
-		{6, 9},
+func callRequest(res interface{}) error {
+
+	header := req.Header{
+		"Accept": "application/json",
 	}
-	newInterval := []int{2, 5}
-	fmt.Println(code.InsertIntervals(intervals, newInterval))
+	req.SetTimeout(15 * time.Second)
+	resp, err := req.Get("https://api.publicapis.org/entries", header)
+	if err != nil {
+		return err
+	}
+	statusCode := 0 // default
+	if resp != nil {
+		statusCode = resp.Response().StatusCode
+	}
+	if statusCode != 200 {
+		return err
+	}
+	err = resp.ToJSON(&res)
+	if err != nil {
+		return err
+	}
+	return nil
+}
+
+type Data struct {
+	Count int `json:"count"`
+}
+
+func getCustomerID(context context.Context) int32 {
+	md, ok := metadata.FromIncomingContext(context)
+	if !ok || len(md.Get("be-id")) == 0 {
+		return 0
+	}
+
+	id, err := strconv.ParseUint(md.Get("be-id")[0], 10, 32)
+	if err != nil {
+		return 0
+	}
+
+	return int32(id)
+}
+
+func main() {
+	agoda_contest2023.Ex2Input()
+	//fmt.Println(agoda_contest2023.SeparateIntoPrimes(4125))
 }
