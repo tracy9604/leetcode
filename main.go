@@ -1,18 +1,15 @@
 package main
 
 import (
-	"context"
 	"encoding/json"
 	"fmt"
 	"github.com/imroc/req"
 	h3v3 "github.com/uber/h3-go/v3"
-	"google.golang.org/grpc/metadata"
 	"io/ioutil"
-	"leetcode/agoda_contest2023"
+	"leetcode/code/string_problems"
 	"leetcode/h3_demo"
 	"math"
 	"os"
-	"strconv"
 	"strings"
 	"time"
 )
@@ -133,25 +130,7 @@ func callRequest(res interface{}) error {
 	return nil
 }
 
-type Data struct {
-	Count int `json:"count"`
-}
-
-func getCustomerID(context context.Context) int32 {
-	md, ok := metadata.FromIncomingContext(context)
-	if !ok || len(md.Get("be-id")) == 0 {
-		return 0
-	}
-
-	id, err := strconv.ParseUint(md.Get("be-id")[0], 10, 32)
-	if err != nil {
-		return 0
-	}
-
-	return int32(id)
-}
-
 func main() {
-	agoda_contest2023.Ex2Input()
-	//fmt.Println(agoda_contest2023.SeparateIntoPrimes(4125))
+	s := "abcabcbb"
+	fmt.Println(string_problems.FindLengthOfLongestSubStringWindowSliding(s))
 }
