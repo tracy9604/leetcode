@@ -6,7 +6,7 @@ import (
 	"github.com/imroc/req"
 	h3v3 "github.com/uber/h3-go/v3"
 	"io/ioutil"
-	"leetcode/code/string_problems"
+	"leetcode/algorithms/sliding_window_technique"
 	"leetcode/h3_demo"
 	"math"
 	"os"
@@ -131,6 +131,8 @@ func callRequest(res interface{}) error {
 }
 
 func main() {
-	s := "abcabcbb"
-	fmt.Println(string_problems.FindLengthOfLongestSubStringWindowSliding(s))
+	arr := []int{1, 6, 2, 5, 3, 4}
+	n := 6
+	m := 2
+	fmt.Println(sliding_window_technique.FindMaximumSumOfSubArray(arr, n, m))
 }
