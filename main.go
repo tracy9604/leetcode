@@ -3,16 +3,35 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/imroc/req"
 	h3v3 "github.com/uber/h3-go/v3"
 	"io/ioutil"
-	"leetcode/code/string_problems"
+	"leetcode/code/hash_table"
 	"leetcode/h3_demo"
 	"math"
 	"os"
 	"strings"
-	"time"
 )
+
+type GeoGeometry struct {
+	Type        string         `json:"type"`
+	Coordinates [][][2]float64 `json:"coordinates"`
+}
+
+type GeoFeatures struct {
+	Type       string      `json:"type"`
+	Properties struct{}    `json:"properties,omitempty"`
+	Geometry   GeoGeometry `json:"geometry"`
+}
+
+type Geo struct {
+	Type     string        `json:"type"`
+	Features []GeoFeatures `json:"features"`
+}
+
+type GeofenceItem struct {
+	RefinedGeo string
+	Indexes    string
+}
 
 func GetResultFarmGeofence() {
 	lat := 10.88675618334471
@@ -106,31 +125,74 @@ func Distance(lat1, lon1, lat2, lon2 float64) float64 {
 	return 2 * r * math.Asin(math.Sqrt(h))
 }
 
-func callRequest(res interface{}) error {
+func GetStrGeoFromH3Indexes(indexes []string) string {
+	g := GetGeoFromH3Indexes(indexes)
+	strG, err := json.Marshal(g)
+	if err != nil {
+		return ""
+	}
 
-	header := req.Header{
-		"Accept": "application/json",
+	return string(strG)
+}
+
+func GetGeoFromH3Indexes(indexes []string) Geo {
+	polygons := getCoordinatesFromH3Indexes(indexes)
+	refinedGeo := Geo{
+		Type:     "FeatureCollection",
+		Features: make([]GeoFeatures, 0),
 	}
-	req.SetTimeout(15 * time.Second)
-	resp, err := req.Get("https://api.publicapis.org/entries", header)
-	if err != nil {
-		return err
+
+	for _, subPolygon := range polygons {
+		refinedGeo.Features = append(refinedGeo.Features, GeoFeatures{
+			Type: "Feature",
+			Geometry: GeoGeometry{
+				Type:        "Polygon",
+				Coordinates: [][][2]float64{subPolygon},
+			},
+		})
 	}
-	statusCode := 0 // default
-	if resp != nil {
-		statusCode = resp.Response().StatusCode
+
+	return refinedGeo
+}
+
+func getCoordinatesFromH3Indexes(indexes []string) [][][2]float64 {
+	h3Indexes := make([]h3v3.H3Index, 0, len(indexes))
+	for _, h3IndexStr := range indexes {
+		h3Indexes = append(h3Indexes, h3v3.FromString(h3IndexStr))
 	}
-	if statusCode != 200 {
-		return err
+
+	polygon := h3v3.SetToLinkedGeo(h3Indexes)
+	coordinates := make([][][2]float64, 0)
+	for polygon.First != nil {
+		loop := polygon.First
+		for loop != nil {
+			coords := make([][2]float64, 0)
+			curr := loop.First
+			for curr != nil {
+				coordinate := [2]float64{
+					curr.Vertex.Longitude,
+					curr.Vertex.Latitude,
+				}
+				coords = append(coords, coordinate)
+				next := curr.Next
+				curr = next
+			}
+			coordinates = append(coordinates, coords)
+			next := loop.Next
+			loop = next
+		}
+		next := polygon.Next
+		if next == nil {
+			break
+		}
+		polygon = *next
 	}
-	err = resp.ToJSON(&res)
-	if err != nil {
-		return err
-	}
-	return nil
+
+	return coordinates
 }
 
 func main() {
-	s := "aacabdkacaa"
-	fmt.Println(string_problems.FindPalindromeSubstringByDP(s))
+	nums := []int{2, 7, 11, 15}
+	target := 9
+	fmt.Println(hash_table.FindTwoSum(nums, target))
 }
