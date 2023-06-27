@@ -192,7 +192,6 @@ func getCoordinatesFromH3Indexes(indexes []string) [][][2]float64 {
 }
 
 func main() {
-	nums := []int{2, 7, 11, 15}
-	target := 9
-	fmt.Println(hash_table.FindTwoSum(nums, target))
+	s := "pwwkew"
+	fmt.Println(hash_table.FindLongestSubstringBySlidingWindow(s))
 }
