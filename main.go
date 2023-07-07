@@ -192,6 +192,6 @@ func getCoordinatesFromH3Indexes(indexes []string) [][][2]float64 {
 }
 
 func main() {
-	s := "pwwkew"
-	fmt.Println(hash_table.FindLongestSubstringBySlidingWindow(s))
+	s := "MCMXCIV"
+	fmt.Println(hash_table.ConvertRomanToInteger(s))
 }
