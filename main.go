@@ -192,6 +192,6 @@ func getCoordinatesFromH3Indexes(indexes []string) [][][2]float64 {
 }
 
 func main() {
-	s := "MCMXCIV"
-	fmt.Println(hash_table.ConvertRomanToInteger(s))
+	s := "23"
+	fmt.Println(hash_table.FindLetterCombinations(s))
 }
