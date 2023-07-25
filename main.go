@@ -192,6 +192,10 @@ func getCoordinatesFromH3Indexes(indexes []string) [][][2]float64 {
 }
 
 func main() {
-	s := "23"
-	fmt.Println(hash_table.FindLetterCombinations(s))
+	matrix := [][]int{
+		{1, 1, 1},
+		{1, 0, 1},
+		{1, 1, 1},
+	}
+	hash_table.SetZeroesV2(matrix)
 }
