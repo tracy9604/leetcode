@@ -192,6 +192,7 @@ func getCoordinatesFromH3Indexes(indexes []string) [][][2]float64 {
 }
 
 func main() {
-	arr := []int{36, 41, 56, 35, 44, 33, 34, 92, 43, 32, 42}
-	fmt.Println(hash_table.FindLongestConsecutiveSequenceV2(arr))
+	s := "leetcode"
+	wordDict := []string{"leet", "code"}
+	fmt.Println(hash_table.CheckWorkBreak(s, wordDict))
 }
