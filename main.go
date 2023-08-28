@@ -5,7 +5,7 @@ import (
 	"fmt"
 	h3v3 "github.com/uber/h3-go/v3"
 	"io/ioutil"
-	"leetcode/code/hash_table"
+	"leetcode/code/stack"
 	"leetcode/h3_demo"
 	"math"
 	"os"
@@ -192,7 +192,6 @@ func getCoordinatesFromH3Indexes(indexes []string) [][][2]float64 {
 }
 
 func main() {
-	s := "leetcode"
-	wordDict := []string{"leet", "code"}
-	fmt.Println(hash_table.CheckWorkBreak(s, wordDict))
+	s := "[(])"
+	fmt.Println(stack.ValidParentheses(s))
 }
