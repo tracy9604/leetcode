@@ -19,3 +19,7 @@ func (s *Stack) pop() (string, bool) {
 func (s *Stack) isEmpty() bool {
 	return len(*s) == 0
 }
+
+func (s *Stack) top() string {
+	return (*s)[len(*s)-1]
+}

@@ -192,6 +192,6 @@ func getCoordinatesFromH3Indexes(indexes []string) [][][2]float64 {
 }
 
 func main() {
-	s := "[(])"
-	fmt.Println(stack.ValidParentheses(s))
+	s := "(()"
+	fmt.Println(stack.FindLongestValidParentheses(s))
 }
