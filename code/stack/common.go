@@ -39,6 +39,18 @@ func (s *IntegerStack) pop() (int, bool) {
 	return element, true
 }
 
+func (s *IntegerStack) Push(data int) {
+	s.push(data)
+}
+
+func (s *IntegerStack) Pop() (int, bool) {
+	return s.pop()
+}
+
+func (s *IntegerStack) IsEmpty() bool {
+	return s.isEmpty()
+}
+
 func (s *IntegerStack) isEmpty() bool {
 	return len(*s) == 0
 }
