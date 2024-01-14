@@ -1,43 +1,3 @@
-//package main
-//
-//import (
-//	"bytes"
-//	"context"
-//	"encoding/csv"
-//	"encoding/json"
-//	"fmt"
-//	h3v3 "github.com/uber/h3-go/v3"
-//	"io"
-//	"io/ioutil"
-//	"leetcode/h3_demo"
-//	"log"
-//	"math"
-//	"net/http"
-//	"os"
-//	"strconv"
-//	"strings"
-//	"time"
-//)
-//
-
-//
-//func main() {
-//	//height := []int{3, 0, 2, 0, 4}
-//	//fmt.Println(stack.FindTrappingRainWater3(height))
-//	fmt.Println(h3v3.ToString(h3v3.FromGeo(h3v3.GeoCoord{
-//		Latitude:  10.867291450500488,
-//		Longitude: 106.76216125488281,
-//	}, 11)))
-//
-//	fmt.Println(h3v3.ToString(h3v3.FromGeo(h3v3.GeoCoord{
-//		Latitude:  10.7772,
-//		Longitude: 106.683,
-//	}, 11)))
-//
-//	//readFile()
-//
-//}
-
 package main
 
 import (
@@ -50,7 +10,7 @@ import (
 	h3v3 "github.com/uber/h3-go/v3"
 	"io"
 	"io/ioutil"
-	"leetcode/code/contests/contest_21_11"
+	"leetcode/algorithms/arrays"
 	"leetcode/h3_demo"
 	"log"
 	"math"
@@ -455,7 +415,7 @@ var rawGeofences = `[
 ]`
 
 var data = `[
-{"session_id":"432869015","request_latitude":"21.018482208251953","request_longitude":"105.85502624511719"}
+{"session_id":"445878385","request_latitude":"10.812714576721191","request_longitude":"106.66568756103516"}
 ]`
 
 func CheckGeo() {
@@ -558,9 +518,21 @@ func main() {
 	//CheckGeo()
 	//AddDriverIncentiveHistory()
 	//s1 := "111111111100100010"
-	s := "abba"
-	k := 1
-	fmt.Println(contest_21_11.FindBeautifulString(s, k))
+	//arr := [][]int{}
+	//
+	//k := 2
+	//[-1,3,0,0,0,0,0]
+	//2
+	//[0,0,1,2,3]
+	//5
+	nums1 := []int{1, 2, 3, 0, 0, 0}
+	nums2 := []int{2, 5, 6}
+	m := 3
+	n := 3
+	arrays.MergeSortedArrays(nums1, m, nums2, n)
+	fmt.Println(nums1)
+	fmt.Println(nums2)
 	//fmt.Println(Distance(10.7631330490112, 106.65892791748, 10.762732, 106.658104))
 	//fmt.Println(Distance(10.763133, 106.658928, 10.762732, 106.658104))
+	//fmt.Println(new(big.Int).Exp(big.NewInt(51), big.NewInt(35), nil))
 }
