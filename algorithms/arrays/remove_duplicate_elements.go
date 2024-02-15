@@ -31,3 +31,25 @@ func RemoveDuplicatesV2(nums []int) int {
 	}
 	return len(copiedNums)
 }
+
+func RemoveDuplicatedElementsV3(nums []int, val int) int {
+	if len(nums) == 0 {
+		return 0
+	}
+	left, right := 0, len(nums)-1
+	count := 0
+	for left < right {
+		for nums[left] != val && left < right {
+			left++
+		}
+		for nums[right] == val && left < right {
+			right--
+		}
+		if left < right {
+			nums[left], nums[right] = nums[right], nums[left]
+			left++
+			right--
+		}
+	}
+	return len(nums) - count
+}
