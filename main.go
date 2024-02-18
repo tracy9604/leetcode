@@ -525,9 +525,8 @@ func main() {
 	//2
 	//[0,0,1,2,3]
 	//5
-	nums := []int{0, 1, 2, 2, 3, 0, 4, 2}
-	val := 2
-	fmt.Println(arrays.RemoveDuplicatedElementsV3(nums, val))
+	nums := []int{1, 1, 4, 2, 1, 3}
+	fmt.Println(arrays.HeightCheckerV2(nums))
 	//fmt.Println(Distance(10.7631330490112, 106.65892791748, 10.762732, 106.658104))
 	//fmt.Println(Distance(10.763133, 106.658928, 10.762732, 106.658104))
 	//fmt.Println(new(big.Int).Exp(big.NewInt(51), big.NewInt(35), nil))
