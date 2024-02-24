@@ -10,7 +10,6 @@ import (
 	h3v3 "github.com/uber/h3-go/v3"
 	"io"
 	"io/ioutil"
-	"leetcode/algorithms/arrays"
 	"leetcode/h3_demo"
 	"log"
 	"math"
@@ -415,7 +414,7 @@ var rawGeofences = `[
 ]`
 
 var data = `[
-{"session_id":"445878385","request_latitude":"10.812714576721191","request_longitude":"106.66568756103516"}
+{"session_id":"481385938","request_latitude":"10.810465","request_longitude":"106.665422"}
 ]`
 
 func CheckGeo() {
@@ -515,7 +514,6 @@ func AddDriverIncentiveHistory() {
 }
 
 func main() {
-	//CheckGeo()
 	//AddDriverIncentiveHistory()
 	//s1 := "111111111100100010"
 	//arr := [][]int{}
@@ -525,8 +523,8 @@ func main() {
 	//2
 	//[0,0,1,2,3]
 	//5
-	nums := []int{1, 1, 4, 2, 1, 3}
-	fmt.Println(arrays.HeightCheckerV2(nums))
+	//nums := []int{4, 3, 2, 7, 8, 2, 3, 1}
+	//fmt.Println(arrays.FindDisappearedNumbers(nums))
 	//fmt.Println(Distance(10.7631330490112, 106.65892791748, 10.762732, 106.658104))
 	//fmt.Println(Distance(10.763133, 106.658928, 10.762732, 106.658104))
 	//fmt.Println(new(big.Int).Exp(big.NewInt(51), big.NewInt(35), nil))
