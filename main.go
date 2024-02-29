@@ -10,6 +10,7 @@ import (
 	h3v3 "github.com/uber/h3-go/v3"
 	"io"
 	"io/ioutil"
+	"leetcode/algorithms/queue"
 	"leetcode/h3_demo"
 	"log"
 	"math"
@@ -64,8 +65,8 @@ type MergeH9Response struct {
 }
 
 func GetResultFarmGeofence() {
-	lat := 10.88675618334471
-	long := 106.64220083059412
+	lat := 10.76708020854457
+	long := 106.6870075437044
 
 	fmt.Println(h3v3.ToString(h3v3.FromGeo(h3v3.GeoCoord{
 		Latitude:  lat,
@@ -514,6 +515,7 @@ func AddDriverIncentiveHistory() {
 }
 
 func main() {
+	//GetResultFarmGeofence()
 	//AddDriverIncentiveHistory()
 	//s1 := "111111111100100010"
 	//arr := [][]int{}
@@ -528,4 +530,5 @@ func main() {
 	//fmt.Println(Distance(10.7631330490112, 106.65892791748, 10.762732, 106.658104))
 	//fmt.Println(Distance(10.763133, 106.658928, 10.762732, 106.658104))
 	//fmt.Println(new(big.Int).Exp(big.NewInt(51), big.NewInt(35), nil))
+	fmt.Println(queue.BFS())
 }
