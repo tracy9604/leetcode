@@ -10,7 +10,7 @@ import (
 	h3v3 "github.com/uber/h3-go/v3"
 	"io"
 	"io/ioutil"
-	"leetcode/algorithms/queue"
+	"leetcode/algorithms/stack"
 	"leetcode/h3_demo"
 	"log"
 	"math"
@@ -526,9 +526,10 @@ func main() {
 	//[0,0,1,2,3]
 	//5
 	//nums := []int{4, 3, 2, 7, 8, 2, 3, 1}
-	//fmt.Println(arrays.FindDisappearedNumbers(nums))
+	tokens := []string{"10", "6", "9", "3", "+", "-11", "*", "/", "*", "17", "+", "5", "+"}
+	fmt.Println(stack.EvaluatePolishNotation(tokens))
 	//fmt.Println(Distance(10.7631330490112, 106.65892791748, 10.762732, 106.658104))
 	//fmt.Println(Distance(10.763133, 106.658928, 10.762732, 106.658104))
 	//fmt.Println(new(big.Int).Exp(big.NewInt(51), big.NewInt(35), nil))
-	fmt.Println(queue.BFS())
+
 }
