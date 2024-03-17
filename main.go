@@ -520,14 +520,13 @@ func main() {
 	//s1 := "111111111100100010"
 	//arr := [][]int{}
 	//
-	//k := 2
-	//[-1,3,0,0,0,0,0]
-	//2
-	//[0,0,1,2,3]
-	//5
-	//nums := []int{4, 3, 2, 7, 8, 2, 3, 1}
-	tokens := []string{"10", "6", "9", "3", "+", "-11", "*", "/", "*", "17", "+", "5", "+"}
-	fmt.Println(stack.EvaluatePolishNotation(tokens))
+	grid := [][]byte{
+		{'1', '1', '1', '1', '0'},
+		{'1', '1', '0', '1', '0'},
+		{'1', '1', '0', '0', '0'},
+		{'0', '0', '0', '0', '0'},
+	}
+	fmt.Println(stack.FindNumberOfIslands(grid))
 	//fmt.Println(Distance(10.7631330490112, 106.65892791748, 10.762732, 106.658104))
 	//fmt.Println(Distance(10.763133, 106.658928, 10.762732, 106.658104))
 	//fmt.Println(new(big.Int).Exp(big.NewInt(51), big.NewInt(35), nil))
