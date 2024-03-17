@@ -520,13 +520,9 @@ func main() {
 	//s1 := "111111111100100010"
 	//arr := [][]int{}
 	//
-	grid := [][]byte{
-		{'1', '1', '1', '1', '0'},
-		{'1', '1', '0', '1', '0'},
-		{'1', '1', '0', '0', '0'},
-		{'0', '0', '0', '0', '0'},
-	}
-	fmt.Println(stack.FindNumberOfIslands(grid))
+	nums := []int{1, 1, 1, 1, 1}
+	target := 3
+	fmt.Println(stack.FindTargetSumWays(nums, target))
 	//fmt.Println(Distance(10.7631330490112, 106.65892791748, 10.762732, 106.658104))
 	//fmt.Println(Distance(10.763133, 106.658928, 10.762732, 106.658104))
 	//fmt.Println(new(big.Int).Exp(big.NewInt(51), big.NewInt(35), nil))
