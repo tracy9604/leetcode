@@ -521,7 +521,7 @@ func main() {
 	//arr := [][]int{}
 	//
 	//fmt.Println(stack.TestMyQueue())
-	stack.TestMyQueue()
+	stack.TestMyStack1()
 	//fmt.Println(Distance(10.7631330490112, 106.65892791748, 10.762732, 106.658104))
 	//fmt.Println(Distance(10.763133, 106.658928, 10.762732, 106.658104))
 	//fmt.Println(new(big.Int).Exp(big.NewInt(51), big.NewInt(35), nil))
