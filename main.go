@@ -10,7 +10,7 @@ import (
 	h3v3 "github.com/uber/h3-go/v3"
 	"io"
 	"io/ioutil"
-	"leetcode/algorithms/stack"
+	"leetcode/algorithms/binary_tree"
 	"leetcode/h3_demo"
 	"log"
 	"math"
@@ -533,12 +533,30 @@ func main() {
 	//	{1, 1, 1, 1, 1, 1, 1, 0, 1, 0},
 	//	{1, 1, 1, 1, 0, 1, 0, 0, 1, 1},
 	//}
-	mat := [][]int{
-		{0, 0, 0},
-		{0, 1, 0},
-		{1, 1, 1},
+
+	node4 := &binary_tree.TreeNode{
+		Val: 4,
 	}
-	fmt.Println(stack.UpdateMatrixV2(mat))
+
+	node5 := &binary_tree.TreeNode{
+		Val: 5,
+	}
+
+	node3 := &binary_tree.TreeNode{
+		Val: 3,
+	}
+	node2 := &binary_tree.TreeNode{
+		Val:   2,
+		Left:  node4,
+		Right: node5,
+	}
+	node1 := &binary_tree.TreeNode{
+		Val:   1,
+		Right: node3,
+		Left:  node2,
+	}
+
+	fmt.Println(binary_tree.BFSLevelOrderTraversal(node1))
 	//fmt.Println(Distance(10.7631330490112, 106.65892791748, 10.762732, 106.658104))
 	//fmt.Println(Distance(10.763133, 106.658928, 10.762732, 106.658104))
 	//fmt.Println(new(big.Int).Exp(big.NewInt(51), big.NewInt(35), nil))
