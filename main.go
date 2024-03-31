@@ -534,29 +534,43 @@ func main() {
 	//	{1, 1, 1, 1, 0, 1, 0, 0, 1, 1},
 	//}
 
-	node4 := &binary_tree.TreeNode{
-		Val: 4,
-	}
-
-	node5 := &binary_tree.TreeNode{
-		Val: 5,
-	}
-
-	node3 := &binary_tree.TreeNode{
-		Val: 3,
+	node7 := &binary_tree.TreeNode{
+		Val: 7,
 	}
 	node2 := &binary_tree.TreeNode{
-		Val:   2,
-		Left:  node4,
-		Right: node5,
+		Val: 2,
 	}
 	node1 := &binary_tree.TreeNode{
-		Val:   1,
-		Right: node3,
-		Left:  node2,
+		Val: 1,
 	}
-
-	fmt.Println(binary_tree.BFSLevelOrderTraversal(node1))
+	node11 := &binary_tree.TreeNode{
+		Val:   11,
+		Left:  node7,
+		Right: node2,
+	}
+	node13 := &binary_tree.TreeNode{
+		Val: 13,
+	}
+	node4 := &binary_tree.TreeNode{
+		Val:   4,
+		Right: node1,
+	}
+	node8 := &binary_tree.TreeNode{
+		Val:   8,
+		Left:  node13,
+		Right: node4,
+	}
+	node41 := &binary_tree.TreeNode{
+		Val:  4,
+		Left: node11,
+	}
+	node5 := &binary_tree.TreeNode{
+		Val:   5,
+		Left:  node41,
+		Right: node8,
+	}
+	targetSum := 22
+	fmt.Println(binary_tree.PathSum(node5, targetSum))
 	//fmt.Println(Distance(10.7631330490112, 106.65892791748, 10.762732, 106.658104))
 	//fmt.Println(Distance(10.763133, 106.658928, 10.762732, 106.658104))
 	//fmt.Println(new(big.Int).Exp(big.NewInt(51), big.NewInt(35), nil))
