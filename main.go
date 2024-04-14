@@ -10,7 +10,7 @@ import (
 	h3v3 "github.com/uber/h3-go/v3"
 	"io"
 	"io/ioutil"
-	"leetcode/algorithms/recursion"
+	"leetcode/algorithms/binary_search"
 	"leetcode/h3_demo"
 	"log"
 	"math"
@@ -518,12 +518,7 @@ func main() {
 	//CheckGeo()
 	//GetResultFarmGeofence()
 	//AddDriverIncentiveHistory()
-
-	//node4 := &recursion.ListNode{Val: 4}
-	//node3 := &recursion.ListNode{Val: 3, Next: node4}
-	//node2 := &recursion.ListNode{Val: 2, Next: node3}
-	//node1 := &recursion.ListNode{Val: 1, Next: node2}
-	x := float64(2)
-	n := -2
-	fmt.Println(recursion.MyPow(x, n))
+	numbers := []int{2, 3, 4}
+	target := 6
+	fmt.Println(binary_search.FindTwoSumBS(numbers, target))
 }
