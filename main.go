@@ -10,7 +10,7 @@ import (
 	h3v3 "github.com/uber/h3-go/v3"
 	"io"
 	"io/ioutil"
-	"leetcode/algorithms/binary_search"
+	"leetcode/algorithms/sorting"
 	"leetcode/h3_demo"
 	"log"
 	"math"
@@ -518,7 +518,7 @@ func main() {
 	//CheckGeo()
 	//GetResultFarmGeofence()
 	//AddDriverIncentiveHistory()
-	numbers := []int{2, 3, 4}
-	target := 6
-	fmt.Println(binary_search.FindTwoSumBS(numbers, target))
+	nums := []int{1, 1, 1, 2, 2, 3}
+	k := 2
+	fmt.Println(sorting.FindKMostFrequentElements(nums, k))
 }
