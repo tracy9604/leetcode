@@ -10,7 +10,7 @@ import (
 	h3v3 "github.com/uber/h3-go/v3"
 	"io"
 	"io/ioutil"
-	"leetcode/algorithms/sorting"
+	"leetcode/algorithms/linked_list"
 	"leetcode/h3_demo"
 	"log"
 	"math"
@@ -518,7 +518,9 @@ func main() {
 	//CheckGeo()
 	//GetResultFarmGeofence()
 	//AddDriverIncentiveHistory()
-	nums := []int{1, 1, 1, 2, 2, 3}
-	k := 2
-	fmt.Println(sorting.FindKMostFrequentElements(nums, k))
+	node11 := &linked_list.ListNode{Val: 1}
+	node21 := &linked_list.ListNode{Val: 2, Next: node11}
+	node2 := &linked_list.ListNode{Val: 2, Next: node21}
+	node1 := &linked_list.ListNode{Val: 1, Next: node2}
+	fmt.Println(linked_list.CheckPalindromeLinkedListV2(node1))
 }
