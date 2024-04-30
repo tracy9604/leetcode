@@ -518,9 +518,11 @@ func main() {
 	//CheckGeo()
 	//GetResultFarmGeofence()
 	//AddDriverIncentiveHistory()
-	node11 := &linked_list.ListNode{Val: 1}
-	node21 := &linked_list.ListNode{Val: 2, Next: node11}
-	node2 := &linked_list.ListNode{Val: 2, Next: node21}
+	node5 := &linked_list.ListNode{Val: 5}
+	node4 := &linked_list.ListNode{Val: 4, Next: node5}
+	node3 := &linked_list.ListNode{Val: 3, Next: node4}
+	node2 := &linked_list.ListNode{Val: 2, Next: node3}
 	node1 := &linked_list.ListNode{Val: 1, Next: node2}
-	fmt.Println(linked_list.CheckPalindromeLinkedListV2(node1))
+	k := 2
+	fmt.Println(linked_list.RotateRight(node1, k))
 }
