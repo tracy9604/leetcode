@@ -10,7 +10,7 @@ import (
 	h3v3 "github.com/uber/h3-go/v3"
 	"io"
 	"io/ioutil"
-	"leetcode/algorithms/linked_list"
+	"leetcode/algorithms/two_pointers_technique"
 	"leetcode/h3_demo"
 	"log"
 	"math"
@@ -518,11 +518,12 @@ func main() {
 	//CheckGeo()
 	//GetResultFarmGeofence()
 	//AddDriverIncentiveHistory()
-	node5 := &linked_list.ListNode{Val: 5}
-	node4 := &linked_list.ListNode{Val: 4, Next: node5}
-	node3 := &linked_list.ListNode{Val: 3, Next: node4}
-	node2 := &linked_list.ListNode{Val: 2, Next: node3}
-	node1 := &linked_list.ListNode{Val: 1, Next: node2}
-	k := 2
-	fmt.Println(linked_list.RotateRight(node1, k))
+	node21 := &two_pointers_technique.ListNode{Val: 2}
+	node5 := &two_pointers_technique.ListNode{Val: 5, Next: node21}
+	node2 := &two_pointers_technique.ListNode{Val: 2, Next: node5}
+	node3 := &two_pointers_technique.ListNode{Val: 3, Next: node2}
+	node4 := &two_pointers_technique.ListNode{Val: 4, Next: node3}
+	node1 := &two_pointers_technique.ListNode{Val: 1, Next: node4}
+	x := 3
+	fmt.Println(two_pointers_technique.PartitionList(node1, x))
 }
