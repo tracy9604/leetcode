@@ -518,12 +518,7 @@ func main() {
 	//CheckGeo()
 	//GetResultFarmGeofence()
 	//AddDriverIncentiveHistory()
-	node21 := &two_pointers_technique.ListNode{Val: 2}
-	node5 := &two_pointers_technique.ListNode{Val: 5, Next: node21}
-	node2 := &two_pointers_technique.ListNode{Val: 2, Next: node5}
-	node3 := &two_pointers_technique.ListNode{Val: 3, Next: node2}
-	node4 := &two_pointers_technique.ListNode{Val: 4, Next: node3}
-	node1 := &two_pointers_technique.ListNode{Val: 1, Next: node4}
-	x := 3
-	fmt.Println(two_pointers_technique.PartitionList(node1, x))
+	version1 := "1.01"
+	version2 := "1.001"
+	fmt.Println(two_pointers_technique.CompareVersionNumbers(version1, version2))
 }
