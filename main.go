@@ -518,7 +518,7 @@ func main() {
 	//CheckGeo()
 	//GetResultFarmGeofence()
 	//AddDriverIncentiveHistory()
-	version1 := "1.01"
-	version2 := "1.001"
-	fmt.Println(two_pointers_technique.CompareVersionNumbers(version1, version2))
+	//nums := []int{1, 3, 4, 2, 2}
+	//fmt.Println(two_pointers_technique.FindDuplicateNumber(nums))
+	two_pointers_technique.TestFindMedian()
 }
