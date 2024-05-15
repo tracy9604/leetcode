@@ -10,7 +10,7 @@ import (
 	h3v3 "github.com/uber/h3-go/v3"
 	"io"
 	"io/ioutil"
-	"leetcode/algorithms/two_pointers_technique"
+	"leetcode/algorithms/BFS"
 	"leetcode/h3_demo"
 	"log"
 	"math"
@@ -519,6 +519,9 @@ func main() {
 	//GetResultFarmGeofence()
 	//AddDriverIncentiveHistory()
 	//nums := []int{1, 3, 4, 2, 2}
-	//fmt.Println(two_pointers_technique.FindDuplicateNumber(nums))
-	two_pointers_technique.TestFindMedian()
+	beginWord := "hit"
+	endWord := "cog"
+	wordList := []string{"hot", "dot", "dog", "lot", "log", "cog"}
+	fmt.Println(BFS.WordLadder(beginWord, endWord, wordList))
+	//fmt.Println(two_pointers_technique.ReverseString(nums))
 }
