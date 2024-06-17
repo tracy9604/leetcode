@@ -10,7 +10,7 @@ import (
 	h3v3 "github.com/uber/h3-go/v3"
 	"io"
 	"io/ioutil"
-	contests_06_02 "leetcode/contests/contests_06-02"
+	"leetcode/algorithms/daily"
 	"leetcode/h3_demo"
 	"log"
 	"math"
@@ -515,10 +515,5 @@ func AddDriverIncentiveHistory() {
 }
 
 func main() {
-	//CheckGeo()
-	//GetResultFarmGeofence()
-	//AddDriverIncentiveHistory()
-	//nums := []int{1, 3, 4, 2, 2}
-	contests_06_02.TestCountDays()
-	//fmt.Println(BFS.MeasureWater(x, y, target))
+	daily.TestRelativeSortArray()
 }
